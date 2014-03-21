@@ -13,6 +13,7 @@
   "license": "MPL",
   "devDependencies": {
     "coffee-script": "*",
+    "bower": "*",
     "gulp": "*",
     "gulp-replace": "*",
     "gulp-util": "*"

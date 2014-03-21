@@ -1,10 +1,11 @@
-spawn = require('child_process').spawn
+{spawn} = require 'child_process'
+bower = require 'bower'
 gulp = require 'gulp'
 gutil = require 'gulp-util'
 
 load_from_bower_components = ->
   gulp.src [
-    './bower_components/jquery/dist/jquery.min.js'
+    './bower_components/jquery/dist/jquery.min.*'
     './bower_components/bootstrap/dist/js/bootstrap.min.js'
     './bower_components/respond/dest/respond.min.js'
     './bower_components/add-to-homescreen/src/add2home.js'
@@ -19,21 +20,21 @@ load_from_bower_components = ->
     './bower_components/bootstrap/dist/fonts/*'
   ]
   .pipe gulp.dest './fonts/'
+  gutil.log 'All bower components loaded.'
 
-gulp.task 'bower:install', ->
-  bower = spawn 'bower', ['install']
-  bower.stdout.on 'close', (code) -> load_from_bower_components()
+gulp.task 'init', ->
+  bower.commands.install()
+  .on 'log', (r) -> gutil.log r.message if r.level == 'action'
+  .on 'end', (r) -> load_from_bower_components()
 
-gulp.task 'bower:update', ->
-  bower = spawn 'bower', ['update']
-  bower.stdout.on 'close', (code) -> load_from_bower_components()
+gulp.task 'update', ->
+  bower.commands.update()
+  .on 'log', (r) -> gutil.log r.message if r.level == 'action'
+  .on 'end', (r) -> load_from_bower_components()
 
 gulp.task 'scrape', ->
-  phantom = spawn 'phantomjs', ['coffee/scrape.coffee']
-  phantom.stdout.on 'data', (data) ->
-    gutil.log 'PhantomJS:', data.toString().slice(0, -1)
-  phantom.stdout.on 'close', (code) ->
-    gutil.log 'Scraping done!' if code == 0
+  spawn 'phantomjs', ['coffee/scrape.coffee'], stdio: 'inherit'
+  .on 'close', (code) -> gutil.log 'Scraping done!' if code == 0
 
 gulp.task 'test', ->
   #TODO: write tests!
