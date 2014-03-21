@@ -1,20 +1,15 @@
 {
-  "name": "setagaya.5374.jp",
+  "name": "YOUR_CITY.5374.jp",
   "version": "1.0.0",
   "description": "",
   "author": "Code for Kanazawa",
   "contributers": [
-    "Tsutomu Kawamura <tsutomu@librize.com>"
+    "YOUR_NAME <YOUR@MAIL_ADDRESS>"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/setagaya-citizens/5374.git"
-  },
   "license": "MPL",
   "devDependencies": {
     "coffee-script": "*",
     "gulp": "*",
-    "gulp-replace": "*",
     "gulp-util": "*"
   }
 }

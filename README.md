@@ -7,7 +7,7 @@
 
 ##《使い方》
 
-0. **サイトにアクセス** : お使いのiPhoneやAndroidのブラウザで、[5374 (世田谷区版)](http://setagaya.5374.jp/) にアクセスしてください。
+0. **サイトにアクセス** : お使いのiPhoneやAndroidのブラウザで、[5374 (YOUR_CITY版)](http://YOUR_CITY.5374.jp/) にアクセスしてください。
 
 0. **設定 (初回のみ)** : お住まいの地域を選択することで、ゴミ収集日が自動的に更新されます。(※)
 
@@ -20,11 +20,11 @@
 
 ## 提供されるゴミ情報について
 
-世田谷区が公開しているオープンデータをもとにしています。
+YOUR_CITY が公開しているオープンデータをもとにしています。
 
-* [収集日](http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00005071.html)
+* [収集日](http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00005071.html) ←要URL書換
 
-* [分別方法](http://www.city.setagaya.lg.jp/kurashi/101/113/252/1872/d00005072.html)
+* [分別方法](http://www.city.setagaya.lg.jp/kurashi/101/113/252/1872/d00005072.html) ←要URL書換
 
 
 ## ライセンス
@@ -40,9 +40,9 @@
 - 宮田 人司(Hotoshi MIYATA)　Designer
 
 
-### Contributers in Setagaya
+### Contributers in YOUR_CITY
 
-- [河村 奨 (Tsutomu Kawamura)](http://github.com/cognitom)
+- [YOUR_NAME](http://github.com/YOUR_NAME)
 
 
 ## 5374をあなたの地域に導入するには
