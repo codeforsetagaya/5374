@@ -17,8 +17,8 @@ $ gulp scrape
 # 収集日
 s1 = new Scraper(
   'data/area_days.csv' # 保存先
-  'http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00005071.html' # URL
-  '.detail > table > tbody' # セレクタ
+  'http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00131841.html' # URL
+  '.detail table > tbody' # セレクタ
   ['地名','センター','資源','可燃ごみ','不燃ごみ','ペットボトル'] # ヘッダ
   (data) -> # 書式の変換
     for row in data.slice(1) # 1行目をスキップ

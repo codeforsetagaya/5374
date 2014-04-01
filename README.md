@@ -22,7 +22,7 @@
 
 世田谷区が公開しているオープンデータをもとにしています。
 
-* [収集日](http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00005071.html)
+* [収集日](http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00131841.html)
 
 * [分別方法](http://www.city.setagaya.lg.jp/kurashi/101/113/252/1872/d00005072.html)
 
