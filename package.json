@@ -16,6 +16,7 @@
     "bower": "*",
     "gulp": "*",
     "gulp-replace": "*",
-    "gulp-util": "*"
+    "gulp-util": "*",
+    "gulp-phantom": "*"
   }
 }

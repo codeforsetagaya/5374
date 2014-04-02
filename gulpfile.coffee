@@ -1,7 +1,7 @@
-{spawn} = require 'child_process'
 bower = require 'bower'
 gulp = require 'gulp'
 gutil = require 'gulp-util'
+phantom = require 'gulp-phantom'
 
 load_from_bower_components = ->
   gulp.src [
@@ -31,10 +31,11 @@ gulp.task 'update', ->
   bower.commands.update()
   .on 'log', (r) -> gutil.log r.message if r.level == 'action'
   .on 'end', (r) -> load_from_bower_components()
-
-gulp.task 'scrape', ->
-  spawn 'phantomjs', ['coffee/scrape.coffee'], stdio: 'inherit'
-  .on 'close', (code) -> gutil.log 'Scraping done!' if code == 0
+  
+gulp.task 'phantom', ->
+  gulp.src ['./phantom/*.coffee']
+  .pipe phantom ext: '.csv', trim: true
+  .pipe gulp.dest './data/'
 
 gulp.task 'test', ->
   #TODO: write tests!

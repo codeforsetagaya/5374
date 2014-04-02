@@ -8,20 +8,14 @@ module.exports =
       @data = []
     run: (callback) -> @page.open @url, =>
       @load()
-      @save()
+      @output()
       callback()
     load: ->
       arg = selector: @selector
       @data = @convert @page.evaluate (arg) =>
         $(cell).text().trim() for cell in $(row).children() for row in $(arg.selector).children()
       , arg
-    save: ->
+    output: ->
       # CSVデータの作成
-      csv = @headers.join(',') + '\n'
-      csv += row.join(',') + '\n' for row in @data
-      
-      # ファイルに保存
-      file = fs.open @csv_path, 'w'
-      file.write csv.trim()
-      file.close()
-      console.log "exported: #{@csv_path}"
+      console.log @headers.join(',')
+      console.log row.join(',') for row in @data
